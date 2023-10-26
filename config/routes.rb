@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root to: 'root#index'
+  root to: 'storefront#index'
 end

@@ -221,7 +221,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   redis (~> 4.0)
   selenium-webdriver
-  sprockets-rails
+  sprockets-rails (~> 3.4)
   turbo-rails
   tzinfo-data
   web-console
