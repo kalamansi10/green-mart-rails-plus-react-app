@@ -6,9 +6,9 @@ import Promos from './Promos'
 function App() {
   return (
     <>
-      <Navbar />
-      <SearchBanner />
-      <PromoBanners />
+      <Navigation />
+      <Search />
+      <Promos />
     </>
   )
 }
