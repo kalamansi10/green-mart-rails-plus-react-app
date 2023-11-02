@@ -3,6 +3,6 @@ class V1::SeedsController < ApplicationController
     offset = params[:offset]
     render json: Seed.order(created_at: :desc)
                      .offset((offset unless !offset))
-                     .limit(10)
+                     .limit(12)
   end
 end
