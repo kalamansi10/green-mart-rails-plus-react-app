@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import SignIn from './SignIn'
 
 export default function Navigation() {
   return (
     <nav className='Navigation'>
-      <h1>Green Mart</h1>
+      <h1>Seed Mart</h1>
       <ul>
-        <li>Sign In</li>
+        <SignIn />
         <li>Cart</li>
       </ul>
     </nav>

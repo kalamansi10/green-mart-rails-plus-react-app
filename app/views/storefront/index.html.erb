@@ -1,2 +1,2 @@
-<div id="root"></div>
+<div id="root" signedin="<%=!current_user.nil?%>"></div>
 <%= javascript_include_tag "storefront", "data-turbo-track": "reload", defer: true %>
