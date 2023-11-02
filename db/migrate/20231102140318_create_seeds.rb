@@ -9,6 +9,7 @@ class CreateSeeds < ActiveRecord::Migration[7.0]
       t.string :special_attributes
       t.string :planting_method
       t.string :package_size
+      t.integer :price
       t.text :image_links, array: true, default: ["https://placehold.co/600x400", "https://placehold.co/400x600", "https://placehold.co/400x400", "https://placehold.co/600x600"]
 
       t.timestamps
