@@ -8,9 +8,11 @@ function App() {
   return (
     <>
       <Navigation />
-      <Search />
-      <Promos />
-      <RecentItems />
+      <div className="flex-column align-center">
+        <Search />
+        <Promos />
+        <RecentItems />
+      </div>
     </>
   )
 }

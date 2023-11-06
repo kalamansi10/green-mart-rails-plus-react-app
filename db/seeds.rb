@@ -559,6 +559,13 @@ seeds = [
   },
 ]
 
-seeds.each do |seed|
-  Seed.create(seed)
+seeds.each do |data|
+  tags = ""
+  data.each do |k,v|
+    break if k == :price
+    tags = tags + " " + v.downcase
+  end
+  seed = Seed.new(data)
+  seed.update(tags: tags)
+  seed.save
 end

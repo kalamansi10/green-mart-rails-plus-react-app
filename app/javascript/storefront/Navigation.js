@@ -3,9 +3,9 @@ import SignIn from './SignIn'
 
 export default function Navigation() {
   return (
-    <nav className='Navigation'>
+    <nav className='navigation flex-row justify-around'>
       <h1>Seed Mart</h1>
-      <ul>
+      <ul className="flex-row">
         <SignIn />
         <li>Cart</li>
       </ul>

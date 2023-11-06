@@ -5,4 +5,11 @@ class V1::SeedsController < ApplicationController
                      .offset((offset unless !offset))
                      .limit(12)
   end
+  def search
+    keyword = params[:keyword].downcase || ""
+    offset = params[:offset]
+    render json: Seed.where("tags LIKE ?", "%" + params[:keyword] + "%")
+                     .offset((offset unless !offset))
+                     .limit(12)
+  end
 end
