@@ -1,8 +1,9 @@
 import React from 'react'
 import Navigation from './Navigation'
 import Search from './Search'
-import Promos from './Promos'
+import Promos from './Banners'
 import RecentItems from './RecentItems'
+import Banners from './Banners'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Navigation />
       <div className="flex-column align-center">
         <Search />
-        <Promos />
+        <Banners />
         <RecentItems />
       </div>
     </>

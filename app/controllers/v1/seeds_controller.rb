@@ -12,4 +12,7 @@ class V1::SeedsController < ApplicationController
                      .offset((offset unless !offset))
                      .limit(12)
   end
+  def active_banners
+    render json: Banner.where(is_active?: true)
+  end
 end

@@ -569,3 +569,23 @@ seeds.each do |data|
   seed.update(tags: tags)
   seed.save
 end
+
+banners = [
+  {
+    banner_name: "placeholder",
+    image_link: "https://placehold.co/900x400",
+    banner_link: "/"
+  },
+  {
+    banner_name: "placeholder",
+    image_link: "https://placehold.co/900x400",
+    banner_link: "/"
+  },
+  {
+    banner_name: "placeholder",
+    image_link: "https://placehold.co/900x400",
+    banner_link: "/"
+  },
+]
+
+banners.each {|data| Banner.create(data)}
