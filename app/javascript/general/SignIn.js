@@ -1,7 +1,6 @@
 import React, {useRef, useEffect} from 'react'
-import { isSignedIn } from '../storefront'
 
-function SignIn() {
+function SignIn({isSignedIn}) {
   const deviseModal = useRef()
 
   const runShowModal = () => {

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'storefront#index'
+  root to: "store#homepage"
+  get "results/:keyword(/:filters)", to: "store#resultspage"
 
   concern :seeds_queries do
     get "seeds/most-recent(/:offset)", to: "seeds#most_recent"

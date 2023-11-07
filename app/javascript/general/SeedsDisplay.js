@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react'
 
-export default function Index() {
-  const [recentSeeds, setrecentSeeds] = useState()
+export default function Index({seedApi}) {
+  const [seeds, setSeeds] = useState()
 
   useEffect(() => {
-    fetch("/v1/seeds/most-recent")
+    fetch(seedApi)
     .then(response => response.json())
-    .then(seeds => mapRecentSeeds(seeds))
-    .then(mappedSeeds => setrecentSeeds(mappedSeeds))
+    .then(seeds => mapSeeds(seeds))
+    .then(mappedSeeds => setSeeds(mappedSeeds))
   },[])
 
-  function mapRecentSeeds(seeds) {
+  function mapSeeds(seeds) {
     return seeds.map((seed) =>
       <div className="item-card flex-column justify-between box-shadow" key={seed.id}>
         <div>
@@ -37,7 +37,7 @@ export default function Index() {
 
   return (
     <div className="items-grid">
-      {recentSeeds}
+      {seeds}
     </div>
   )
 }
