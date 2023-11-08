@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import Navigation from './general/Navigation'
-import SeedsDisplay from './general/SeedsDisplay'
+import DisplayItems from './general/DisplayItems'
 import Search from './homepage/Search'
 import Banners from './homepage/Banners'
 
@@ -15,7 +15,7 @@ ReactDOM.createRoot(rootDom).render(
     <div className="flex-column align-center">
       <Search />
       <Banners />
-      <SeedsDisplay SeedApi="/v1/seeds/most-recent"/>
+      <DisplayItems API="/v1/seeds/most-recent"/>
     </div>
   </React.StrictMode>,
 )

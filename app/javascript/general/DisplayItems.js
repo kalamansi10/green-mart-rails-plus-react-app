@@ -1,28 +1,28 @@
 import React, {useState, useEffect} from 'react'
 
-export default function Index({seedApi}) {
-  const [seeds, setSeeds] = useState()
+export default function Index({API}) {
+  const [items, setItems] = useState()
 
   useEffect(() => {
-    fetch(seedApi)
+    fetch(API)
     .then(response => response.json())
-    .then(seeds => mapSeeds(seeds))
-    .then(mappedSeeds => setSeeds(mappedSeeds))
+    .then(items => mapItems(items))
+    .then(mappedItems => setItems(mappedItems))
   },[])
 
-  function mapSeeds(seeds) {
-    return seeds.map((seed) =>
-      <div className="item-card flex-column justify-between box-shadow" key={seed.id}>
+  function mapItems(items) {
+    return items.map((item) =>
+      <div className="item-card flex-column justify-between box-shadow" key={item.id}>
         <div>
-          <img src={seed.image_links[0]} alt="placeholder" />
+          <img src={item.image_links[0]} alt="placeholder" />
           <div className="item-padding">
-            <h3>{seed.name}</h3>
+            <h3>{item.name}</h3>
           </div>
         </div>
         <div>
           <hr />
           <div className="flex-row align-center item-padding">
-            <h4>PHP {seed.price}</h4>
+            <h4>PHP {item.price}</h4>
             <div>
               <button>Buy now</button>
             </div>
@@ -37,7 +37,7 @@ export default function Index({seedApi}) {
 
   return (
     <div className="items-grid">
-      {seeds}
+      {items}
     </div>
   )
 }
