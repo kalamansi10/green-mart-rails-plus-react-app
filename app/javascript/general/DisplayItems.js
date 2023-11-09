@@ -8,7 +8,7 @@ export default function Index({API}) {
     .then(response => response.json())
     .then(items => mapItems(items))
     .then(mappedItems => setItems(mappedItems))
-  },[])
+  },[API])
 
   function mapItems(items) {
     return items.map((item) =>
