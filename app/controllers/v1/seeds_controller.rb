@@ -8,7 +8,7 @@ class V1::SeedsController < ApplicationController
   def search
     keyword = params[:keyword].downcase
     offset = params[:offset]
-    render json: seed_filter.where("tags LIKE ?", "%" + params[:keyword] + "%")
+    render json: seed_filter.where("tags LIKE ?", "%" + keyword + "%")
                      .offset((offset unless !offset))
                      .limit(12)
   end
