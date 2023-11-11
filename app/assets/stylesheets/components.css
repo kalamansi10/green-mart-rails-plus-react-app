@@ -69,3 +69,18 @@
   opacity: 20%;
 }
 
+.filters-section {
+  width: 200px;
+}
+
+.filter-group {
+  gap: 10px;
+}
+
+.price-filter {
+  width: 200px;
+}
+
+.price-input {
+  width: 70px;
+}

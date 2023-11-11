@@ -8,7 +8,9 @@ class V1::SeedsController < ApplicationController
   def search
     keyword = params[:keyword].downcase
     offset = params[:offset]
-    render json: seed_filter.where("tags LIKE ?", "%" + keyword + "%")
+    filtered_seed = seed_filter(Seed)
+    filtered_seed = price_filter(filtered_seed)
+    render json: filtered_seed.where("tags LIKE ?", "%" + keyword + "%")
                      .offset((offset unless !offset))
                      .limit(12)
   end
@@ -19,12 +21,17 @@ class V1::SeedsController < ApplicationController
 
   private
 
-  def seed_filter
-    filtered_seed = Seed
+  def seed_filter(filtered_seed)
     return filtered_seed if !params[:filter]
     params[:filter].each do |k, v|
       filtered_seed = filtered_seed.where(k => v)
     end
+    filtered_seed
+  end
+
+  def price_filter(filtered_seed)
+    filtered_seed = filtered_seed.where("price >= #{params[:minimum]}") unless !params[:minimum]
+    filtered_seed = filtered_seed.where("price <= #{params[:lessthan]}") unless !params[:maximum]
     filtered_seed
   end
 

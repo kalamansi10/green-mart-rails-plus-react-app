@@ -9,9 +9,20 @@ export default function SearchFilter({keyword, queryString, setQueryString}) {
   function mapFilters() {
     return filters.map(filter => 
       <section key={filter}>
-        {mapOptions(filter)}
+        <h4>{mapFilterLabel(filter)}</h4>
+        <div className='filter-group flex-column flex-wrap'>
+          {mapOptions(filter)}
+        </div>
       </section>
     )
+  }
+
+  function mapFilterLabel(filter) {
+    result = ''
+    filter.split('_').forEach(word => {
+      result = result + word.charAt(0).toUpperCase() + word.slice(1) + ' '
+    })
+    return result
   }
 
   function mapOptions(filter) {
@@ -19,7 +30,7 @@ export default function SearchFilter({keyword, queryString, setQueryString}) {
     return options[filter].map(option => 
       <span key={option}>
         <input type='checkbox' name={name} id={option} onClick={applyFilter} value={option} />
-        <label htmlFor={option}>{option}</label>
+        <label htmlFor={option}> {option}</label>
       </ span>
     )
   }
@@ -35,15 +46,31 @@ export default function SearchFilter({keyword, queryString, setQueryString}) {
   }
 
   function clearGroup(name) {
-    document.querySelectorAll(`input[name="${name}"]`).forEach(option => {
+    document.getElementsByName(`${name}`).forEach(option => {
       option.checked = false
     })
   }
 
+  function applyPriceFilter(e) {
+    e.preventDefault()
+    document.querySelectorAll('.price-input').forEach(filter => {
+      url.delete(filter.name)
+      if (filter.value != '') {url.append(filter.name, filter.value)}
+    })
+    setQueryString('?' + url.toString())
+  }
 
   return (
-    <>
+    <div className='filters-section'>
+      <form className='price-filter'>
+        <div className='flex-row justify-center'>
+          <input className='price-input' type='number' name='minimum' placeholder='min'/>
+          &nbsp;-&nbsp;
+          <input className='price-input' type='number' name='maximum' placeholder='max'/>
+        </div>
+        <br />
+        <button onClick={applyPriceFilter}>Apply</button>
+      </form>
       {mapFilters()}
-    </>
-  )
+    </div>  )
 }

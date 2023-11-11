@@ -15,8 +15,10 @@ export default function App({isSignedIn}) {
     <>
       <Navigation isSignedIn={isSignedIn} />
       <div className='flex-column align-center'>
-        <SearchFilter keyword={keyword} queryString={queryString} setQueryString={setQueryString} />
-        <DisplayItems API={API} />
+        <div className='flex-row'>
+          <SearchFilter keyword={keyword} queryString={queryString} setQueryString={setQueryString} />
+          <DisplayItems API={API} />
+        </div>
       </div>
     </>
   )
