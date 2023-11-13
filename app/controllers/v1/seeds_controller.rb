@@ -19,6 +19,9 @@ class V1::SeedsController < ApplicationController
     render json: Banner.where(is_active?: true)
   end
 
+  def get_item
+  end
+
   private
 
   def seed_filter(filtered_seed)

@@ -1,6 +1,6 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import App from './homepage/App'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './itempage/App'
 
 const rootDom = document.getElementById('root')
 const isSignedIn = rootDom.getAttribute('signedin')
