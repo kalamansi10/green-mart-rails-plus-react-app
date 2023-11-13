@@ -4,9 +4,10 @@ import App from './itempage/App'
 
 const rootDom = document.getElementById('root')
 const isSignedIn = rootDom.getAttribute('signedin')
+const itemID = rootDom.getAttribute('item-id')
 
 ReactDOM.createRoot(rootDom).render(
   <React.StrictMode>
-    <App isSignedIn={isSignedIn}/>
+    <App isSignedIn={isSignedIn} itemID={itemID}/>
   </React.StrictMode>,
 )

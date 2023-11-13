@@ -20,6 +20,7 @@ class V1::SeedsController < ApplicationController
   end
 
   def get_item
+    render json: Seed.find(params[:item_id])
   end
 
   private

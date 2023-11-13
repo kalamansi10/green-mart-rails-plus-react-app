@@ -84,3 +84,51 @@
 .price-input {
   width: 70px;
 }
+
+.main-container div {
+  width: 450px;
+  height: 450px;
+}
+
+.main-container img {
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+}
+
+.sub-container {
+  width: 400px;
+}
+
+.sub-preview {
+  height: 100px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.sub-slider {
+  display: grid;
+  grid-auto-columns: 100px;
+  grid-auto-flow: column;
+  transition: translate 150ms ease-in-out;
+}
+
+.sub-slider img {
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+}
+
+#leftNav, #rightNav {
+  max-height: 30px;
+  width: auto;
+  opacity: 10%;
+}
+
+#leftNav:hover, #rightNav:hover {
+  cursor: pointer;
+  opacity: 15%;
+}
+
