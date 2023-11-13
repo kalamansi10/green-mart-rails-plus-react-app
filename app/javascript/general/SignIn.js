@@ -5,6 +5,7 @@ function SignIn({isSignedIn}) {
 
   const runShowModal = () => {
     deviseModal.current.showModal()
+    deviseModal.current.addEventListener("click", runCloseModal)
   }
 
   const runCloseModal = e => {
@@ -17,6 +18,7 @@ function SignIn({isSignedIn}) {
       e.clientY > dialogDimensions.bottom
     ) {
       deviseModal.current.close()
+      deviseModal.current.removeEventListener("click", runCloseModal)
     }
   }  
 
@@ -25,9 +27,6 @@ function SignIn({isSignedIn}) {
       <li><a href="/users/sign_out" onClick={runShowModal} data-turbo-frame="devise" data-turbo-method="delete">Sign Out</a></li>
     )
   } else {
-    useEffect(() => {
-      deviseModal.current.addEventListener("click", runCloseModal)
-    }, [])  
     return (
       <li>
         <a href="/users/sign_in" onClick={runShowModal} data-turbo-frame="devise">Sign In</a>

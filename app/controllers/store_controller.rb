@@ -3,4 +3,6 @@ class StoreController < ApplicationController
   end
   def resultspage
   end
+  def itempage
+  end
 end

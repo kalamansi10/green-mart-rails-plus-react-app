@@ -1,2 +1,2 @@
-<div id="root" signedin="<%=!current_user.nil?%>"></div>
+<div id="root" signedin="<%=!current_user.nil?%>" item-id="<%=params[:id]%>"></div>
 <%= javascript_include_tag "itempage", "data-turbo-track": "reload", defer: true %>
