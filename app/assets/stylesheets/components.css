@@ -1,6 +1,6 @@
 .item-card {
-  height: 340px;
   width: 200px;
+  height: 340px;
 }
 
 .item-padding {
@@ -9,8 +9,8 @@
 }
 
 .item-card img {
-  height: 150px;
   width: 200px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -85,12 +85,17 @@
   width: 70px;
 }
 
-.main-container div {
+.slider-container {
   width: 450px;
-  height: 450px;
+  background-color: aqua;
 }
 
-.main-container img {
+.preview-container {
+  width: 400px;
+  height: 400px;
+}
+
+.preview-image img{
   max-width: 400px;
   max-height: 400px;
   width: auto;
@@ -121,14 +126,15 @@
   height: auto;
 }
 
-#leftNav, #rightNav {
+#leftNav,
+#rightNav {
   max-height: 30px;
   width: auto;
   opacity: 10%;
 }
 
-#leftNav:hover, #rightNav:hover {
+#leftNav:hover,
+#rightNav:hover {
   cursor: pointer;
   opacity: 15%;
 }
-

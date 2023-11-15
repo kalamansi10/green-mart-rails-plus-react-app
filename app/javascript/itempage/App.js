@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Navigation from '../general/Navigation'
 import PreviewSlider from './PreviewSlider'
+import ItemBanner from './ItemBanner'
 
 export default function App({isSignedIn, itemID}) {
 
@@ -16,7 +17,14 @@ export default function App({isSignedIn, itemID}) {
     return (
         <>
           <Navigation isSignedIn={isSignedIn} />
-          <PreviewSlider item={item}/>
+          <div className='flex-row justify-center align-center'>
+            <div>
+              <PreviewSlider item={item}/>
+            </div>
+            <div>
+              <ItemBanner item={item}/>
+            </div>
+          </div>
         </>
       )
     }
